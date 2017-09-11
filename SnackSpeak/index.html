@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Snack Speak</title>
+
+<head>
+<body>
+
+
+	<div id="machines">
+
+
+	</div>
+
+	<div>
+		<p>Veuillez saisir un n° de machine</p>
+
+		<input type="number" id="no_machine">
+
+		<button id="getMachineButton"></button>
+
+		<div id="oneMachineDiv">
+			
+		</div> 
+
+	</div>
+
+
+
+
+	<script>
+
+		document.getElementById('getMachineButton').addEventListener('click',function(evt) {
+			var mn = document.getElementById('no_machine').value;
+			ajax('GET', '/vending-machine/' + mn, null, function(res) {
+				document.getElementById('oneMachineDiv').innerText = res;
+			});
+		});
+
+
+		function allMachines() {
+			ajax('GET','/',null, function(res) {
+				document.getElementById('machines').innerHTML = res;
+			});
+		}
+
+
+		function ajax(method, url, data, success_callback) {
+			var xhr = new XMLHttpRequest();
+			xhr.open(method,url);
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState == 4) {
+					success_callback(xhr.responseText);
+				}
+			}
+			if(data) {
+				xhr.send(data);
+			} else {
+				xhr.send();
+			}
+		}
+
+
+	</script>
+
+
+</body>
+</html>

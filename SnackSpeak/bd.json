@@ -1,0 +1,21 @@
+{
+	"vending-machines": [
+		{
+			"id":345,
+			"items": [
+				{"id":3, "nom": "Coca-Cola", "endroits":[33,42,23,52,61], "prix":"85 centimes"},
+				{"id":4, "nom": "Treetop pomme", "endroits":[35,41,22,51,63], "prix":"90 centimes"},
+				{"id":6, "nom": "Kinder Bueno", "endroits":[31, 32], "prix":"1 euro"}
+			]
+		},
+		{
+			"id":222,
+			"items": [
+				{"id":8,"nom":"Sprite","endroits":[11,12,15], "prix":"70 centimes"},
+				{"id":9, "nom":"Schweps Citron", "endroits":[14,18,19],"prix":"75 centimes"}
+			]
+		}
+	]
+
+	
+}
