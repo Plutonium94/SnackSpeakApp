@@ -23,10 +23,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WriteActivity"
+            android:name=".WriteFragment"
             android:label="@string/title_activity_tag"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ReadActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED"></action>
+            </intent-filter>
+
+            <meta-data android:name="android.nfc.action.TECH_DISCOVERED" android:resource="@xml/supported_tech">
+
+            </meta-data>
+        </activity>
+        <activity android:name=".ReadFragment"></activity>
     </application>
 
 </manifest>

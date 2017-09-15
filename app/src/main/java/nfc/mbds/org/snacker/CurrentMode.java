@@ -6,5 +6,6 @@ package nfc.mbds.org.snacker;
 
 public final class CurrentMode {
 
-    public static boolean admin = true;
+    public static boolean admin = false;
+    public static final String URL = "http://10.199.146.253:8084";
 }
